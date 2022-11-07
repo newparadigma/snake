@@ -27,10 +27,20 @@ let newDirection = "Right"
 let apple = {}
 
 function setAppleLocation() {
+  let cossilion = true
+  while (cossilion) {
     apple = {
         x: Math.floor(Math.random() * cols) * scale,
         y: Math.floor(Math.random() * rows) * scale
     }
+    cossilion = false
+
+    snake.forEach(function(item, index, array) {
+      if (item.x == apple.x, item.y == apple.y) {
+        cossilion = true
+      }
+    })
+  }
 }
 
 function drawApple() {
