@@ -24,7 +24,7 @@ function setAppleLocation() {
     }
     cossilion = false
 
-    snake.forEach(function(item, index, array) {
+    snake.forEach(function(item) {
       if (item.x == apple.x, item.y == apple.y) {
         cossilion = true
       }
@@ -38,7 +38,7 @@ function drawApple() {
 }
 
 function drawSnake() {
-    snake.forEach(function(item, index, array) {
+    snake.forEach(function(item, index) {
         ctx.fillStyle = index === 0? "green":"lightgreen"
         ctx.fillRect(item.x, item.y, scale, scale)
     })
@@ -101,7 +101,7 @@ function checkCollisionWithApple(x, y) {
 }())
 
 function checkCollisionWithTail(x, y) {
-    snake.forEach(function(item, index, array) {
+    snake.forEach(function(item) {
         if (item.x === x && item.y == y) {
             gameOver()
         }
